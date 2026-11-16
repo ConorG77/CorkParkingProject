@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore Cork City Council parking availability, prices and opening hours.">
+<title>Cork Parking Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script defer src="snapshot.js"></script>
+<script defer src="map.js"></script>
+</head>
+<body>
+<header><div class="brand"><span aria-hidden="true">P</span> Cork Parking</div><div class="feed"><span id="status" role="status">Loading council feed…</span><button id="refresh" type="button">Refresh</button></div></header>
+<main>
+<section class="intro"><p class="eyebrow">CORK CITY · CAR PARKS</p><h1>Find a place to park</h1><p>Check reported spaces, rates and opening hours for car parks covered by Cork City Council’s feed.</p></section>
+<div class="layout">
+<section class="map-panel" aria-label="Map and availability legend">
+<div id="map" aria-label="Map of Cork City car parks"></div>
+<div class="legend"><span><i class="available"></i>Spaces reported</span><span><i class="limited"></i>1–20 spaces</span><span><i class="full"></i>Full</span><span><i class="unknown"></i>Unavailable</span><button id="reset" type="button">Show all on map</button></div>
+</section>
+<section class="directory" aria-labelledby="list-heading">
+<div class="directory-head"><div class="row"><h2 id="list-heading">Car parks</h2><span id="count"></span></div><label for="search" class="visually-hidden">Search car parks</label><input id="search" type="search" placeholder="Search car parks"><div class="row controls"><label><input id="available" type="checkbox"> Spaces reported</label><label class="visually-hidden" for="sort">Sort car parks</label><select id="sort"><option value="free">Most spaces</option><option value="name">Name A–Z</option></select></div></div>
+<div id="parks"></div>
+</section>
+</div>
+</main>
+<footer>Parking data © <a href="https://data.corkcity.ie/dataset/parking">Cork City Council</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Readings older than 30 minutes are hidden. Check opening hours before travelling.</footer>
+</body>
+</html>
